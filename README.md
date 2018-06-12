@@ -3,15 +3,6 @@ sfdx-react-plugin
 
 Create-React-App for Salesforce
 
-[![Version](https://img.shields.io/npm/v/sfdx-react-plugin.svg)](https://npmjs.org/package/sfdx-react-plugin)
-[![CircleCI](https://circleci.com/gh/wearemav3rik/sfdx-react-plugin/tree/master.svg?style=shield)](https://circleci.com/gh/wearemav3rik/sfdx-react-plugin/tree/master)
-[![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/wearemav3rik/sfdx-react-plugin?branch=master&svg=true)](https://ci.appveyor.com/project/heroku/sfdx-react-plugin/branch/master)
-[![Codecov](https://codecov.io/gh/wearemav3rik/sfdx-react-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/wearemav3rik/sfdx-react-plugin)
-[![Greenkeeper](https://badges.greenkeeper.io/wearemav3rik/sfdx-react-plugin.svg)](https://greenkeeper.io/)
-[![Known Vulnerabilities](https://snyk.io/test/github/wearemav3rik/sfdx-react-plugin/badge.svg)](https://snyk.io/test/github/wearemav3rik/sfdx-react-plugin)
-[![Downloads/week](https://img.shields.io/npm/dw/sfdx-react-plugin.svg)](https://npmjs.org/package/sfdx-react-plugin)
-[![License](https://img.shields.io/npm/l/sfdx-react-plugin.svg)](https://github.com/wearemav3rik/sfdx-react-plugin/blob/master/package.json)
-
 <!-- toc -->
 * [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
@@ -22,7 +13,7 @@ $ npm install -g sfdx-react-plugin
 $ sfdx-react-plugin COMMAND
 running command...
 $ sfdx-react-plugin (-v|--version|version)
-sfdx-react-plugin/0.0.0 darwin-x64 node-v8.9.4
+sfdx-react-plugin/1.0.0 darwin-x64 node-v10.3.0
 $ sfdx-react-plugin --help [COMMAND]
 USAGE
   $ sfdx-react-plugin COMMAND
@@ -47,7 +38,7 @@ EXAMPLE
   $ sfdx react:create -n HelloWorld
 ```
 
-_See code: [src/commands/react/create.ts](https://github.com/wearemav3rik/sfdx-react-plugin/blob/v0.0.0/src/commands/react/create.ts)_
+_See code: [src/commands/react/create.ts](https://github.com/Gurenax/sfdx-react-plugin/blob/v1.0.0/src/commands/react/create.ts)_
 
 ## `sfdx-react-plugin react:update`
 
@@ -62,7 +53,7 @@ EXAMPLE
   $ sfdx react:update
 ```
 
-_See code: [src/commands/react/update.ts](https://github.com/wearemav3rik/sfdx-react-plugin/blob/v0.0.0/src/commands/react/update.ts)_
+_See code: [src/commands/react/update.ts](https://github.com/Gurenax/sfdx-react-plugin/blob/v1.0.0/src/commands/react/update.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
