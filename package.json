@@ -3,7 +3,7 @@
   "description": "Create-React-App for Salesforce",
   "version": "1.0.0",
   "author": "@Gurenax",
-  "bugs": "https://github.com/wearemav3rik/sfdx-react-plugin/issues",
+  "bugs": "https://github.com/Gurenax/sfdx-react-plugin/issues",
   "dependencies": {
     "@oclif/command": "1",
     "@oclif/config": "1",
@@ -36,7 +36,7 @@
     "/lib",
     "/messages"
   ],
-  "homepage": "https://github.com/wearemav3rik/sfdx-react-plugin",
+  "homepage": "https://github.com/Gurenax/sfdx-react-plugin",
   "keywords": [
     "sfdx-plugin"
   ],
@@ -47,7 +47,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "wearemav3rik/sfdx-react-plugin",
+  "repository": "Gurenax/sfdx-react-plugin",
   "scripts": {
     "postpack": "rm -f .oclif.manifest.json",
     "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
