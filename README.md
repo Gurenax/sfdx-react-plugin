@@ -13,7 +13,7 @@ $ npm install -g sfdx-react-plugin
 $ sfdx-react-plugin COMMAND
 running command...
 $ sfdx-react-plugin (-v|--version|version)
-sfdx-react-plugin/1.0.0 darwin-x64 node-v10.3.0
+sfdx-react-plugin/1.0.0 darwin-x64 node-v8.9.4
 $ sfdx-react-plugin --help [COMMAND]
 USAGE
   $ sfdx-react-plugin COMMAND
