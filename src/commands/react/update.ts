@@ -24,9 +24,12 @@ export default class Update extends Command {
 
   public async run(): Promise<any> {
     // tslint:disable-line:no-any
-    // Run webpack
-    this.log('Building app...')
-    return exec(`yarn build`).then(({ stdout, stderr }) => {
+    // Install packages
+    this.log('Installing packages...')
+    return exec(`yarn install`).then(async () => {
+      // Run webpack
+      this.log('Building app...')
+      const { stdout, stderr } = await exec(`yarn build`)
       this.log(stdout)
       this.log(stderr)
     })
