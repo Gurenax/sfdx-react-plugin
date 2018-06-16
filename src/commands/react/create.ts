@@ -16,7 +16,7 @@ const FS = require('fs')
 const Util = require('util')
 const createDirectoryPromise = Util.promisify(require('mkdirp'))
 const writeFilePromise = Util.promisify(FS.writeFile)
-const writeToFile = (filePath: string, contents: string) => (
+const writeToFile = (filePath: string, contents: string): Promise<any> => (
   writeFilePromise(filePath, contents).then(() => `${filePath} created`)
 )
 const exec = Util.promisify(require('child_process').exec)
