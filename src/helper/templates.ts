@@ -3,7 +3,7 @@ const getTemplateBabelConfig = () =>
   "presets": ["env", "react", "stage-1"]
 }`
 
-const getTemplatePackageJsonConfig = name =>
+const getTemplatePackageJsonConfig = (name: string) =>
 `{
   "name": "${name}",
   "version": "1.0.0",
@@ -28,7 +28,7 @@ const getTemplatePackageJsonConfig = name =>
   }
 }`
 
-const getTemplateWebpackConfig = name =>
+const getTemplateWebpackConfig = (name: string) =>
 `const path = require('path')
 const webpack = require('webpack')
 module.exports = {
@@ -76,13 +76,13 @@ class App extends Component {
 
 export default App`
 
-const getTemplateIndexHtml = name =>
+const getTemplateIndexHtml = (name: string) =>
 `<apex:page id="${name}" lightningStylesheets="true">
   <div id="root"></div>
   <script src="/resource/${name}/App.bundle.js" type="text/javascript"></script>
 </apex:page>`
 
-const getTemplateResourceMetadata = name =>
+const getTemplateResourceMetadata = (name: string) =>
 `<?xml version="1.0" encoding="UTF-8"?>
 <StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
     <cacheControl>Private</cacheControl>
@@ -90,7 +90,7 @@ const getTemplateResourceMetadata = name =>
     <description>${name} React App Bundle</description>
 </StaticResource>`
 
-const getTemplatePageMetadata = name =>
+const getTemplatePageMetadata = (name: string) =>
 `<?xml version="1.0" encoding="UTF-8"?>
 <ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>42.0</apiVersion>
