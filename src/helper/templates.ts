@@ -1,9 +1,9 @@
-const getTemplateBabelConfig = () =>
+const getTemplateBabelConfig = (): string =>
 `{
   "presets": ["env", "react", "stage-1"]
 }`
 
-const getTemplatePackageJsonConfig = (name: string) =>
+const getTemplatePackageJsonConfig = (name: string): string =>
 `{
   "name": "${name}",
   "version": "1.0.0",
@@ -28,7 +28,7 @@ const getTemplatePackageJsonConfig = (name: string) =>
   }
 }`
 
-const getTemplateWebpackConfig = (name: string) =>
+const getTemplateWebpackConfig = (name: string): string =>
 `const path = require('path')
 const webpack = require('webpack')
 module.exports = {
@@ -53,13 +53,13 @@ module.exports = {
   devtool: 'inline-source-map' // Uncomment in production
 }`
 
-const getTemplateIndex = () =>
+const getTemplateIndex = (): string =>
 `import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 ReactDOM.render(<App />, document.getElementById('root'))`
 
-const getTemplateApp = () =>
+const getTemplateApp = (): string =>
 `import React, { Component } from 'react'
 
 class App extends Component {
@@ -76,13 +76,13 @@ class App extends Component {
 
 export default App`
 
-const getTemplateIndexHtml = (name: string) =>
+const getTemplateIndexHtml = (name: string): string =>
 `<apex:page id="${name}" lightningStylesheets="true">
   <div id="root"></div>
   <script src="/resource/${name}/App.bundle.js" type="text/javascript"></script>
 </apex:page>`
 
-const getTemplateResourceMetadata = (name: string) =>
+const getTemplateResourceMetadata = (name: string): string =>
 `<?xml version="1.0" encoding="UTF-8"?>
 <StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
     <cacheControl>Private</cacheControl>
@@ -90,7 +90,7 @@ const getTemplateResourceMetadata = (name: string) =>
     <description>${name} React App Bundle</description>
 </StaticResource>`
 
-const getTemplatePageMetadata = (name: string) =>
+const getTemplatePageMetadata = (name: string): string =>
 `<?xml version="1.0" encoding="UTF-8"?>
 <ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>42.0</apiVersion>
