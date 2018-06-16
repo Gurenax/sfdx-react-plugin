@@ -1,7 +1,5 @@
-<center>
-<h1>sfdx-react-plugin</h1>
-<p>The Create-React-App for Salesforce</p>
-</center>
+<h1 align="center">SFDX React Plugin</h1>
+<p align="center">The Create-React-App for Salesforce</p>
 
 ## Minimum requirements
 - Npm
