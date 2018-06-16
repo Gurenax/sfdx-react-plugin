@@ -16,11 +16,9 @@ const FS = require('fs')
 const Util = require('util')
 const createDirectoryPromise = Util.promisify(require('mkdirp'))
 const writeFilePromise = Util.promisify(FS.writeFile)
-const writeToFile = (filePath, contents) => {
-  const date = new Date()
-  const timestamp = date.toISOString()
-  return writeFilePromise(filePath, contents).then(() => `${filePath} created`)
-}
+const writeToFile = (filePath: string, contents: string) => (
+  writeFilePromise(filePath, contents).then(() => `${filePath} created`)
+)
 const exec = Util.promisify(require('child_process').exec)
 
 // Update Command
@@ -52,6 +50,7 @@ export default class Create extends Command {
     const { flags } = this.parse(Create)
     const name = flags.name
 
+    // Load templates
     const templateBabelConfig = getTemplateBabelConfig()
     const templatePackageJsonConfig = getTemplatePackageJsonConfig(name)
     const templateWebpackConfig = getTemplateWebpackConfig(name)
