@@ -1,7 +1,14 @@
+<center>
 sfdx-react-plugin
 =================
-
+</center>
 Create-React-App for Salesforce
+
+### This project requires the following installed:
+- Npm
+- Yarn
+
+---
 
 <!-- toc -->
 * [Debugging your plugin](#debugging-your-plugin)
