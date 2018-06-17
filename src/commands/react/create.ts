@@ -14,12 +14,29 @@ import {
 // Libraries
 const FS = require('fs')
 const Util = require('util')
+
+// Executes terminal commands
+const exec = Util.promisify(require('child_process').exec)
+
+// Creates directories
 const createDirectoryPromise = Util.promisify(require('mkdirp'))
+
+// File key-value pair interface
+interface File {
+  key: string;
+  value: string;
+}
+
+// Writes files
 const writeFilePromise = Util.promisify(FS.writeFile)
 const writeToFile = (filePath: string, contents: string): Promise<any> => (
   writeFilePromise(filePath, contents).then(() => `${filePath} created`)
 )
-const exec = Util.promisify(require('child_process').exec)
+const writeToFiles = (files: File[]): Promise<any> => (
+  Promise.all(
+    files.map(element => writeToFile(element.key, element.value))
+  ).then(result => result)
+)
 
 // Update Command
 export default class Create extends Command {
@@ -59,38 +76,30 @@ export default class Create extends Command {
     const templateIndexHtml = getTemplateIndexHtml(name)
     const templateResourceMetadata = getTemplateResourceMetadata(name)
     const templatePageMetadata = getTemplatePageMetadata(name)
+    // Create key-value pair of filename and file path
+    const files:File[] = [
+      { key: `package.json`, value: templatePackageJsonConfig },
+      { key: `webpack.config.js`, value: templateWebpackConfig },
+      { key: `.babelrc`, value: templateBabelConfig },
+      { key: `force-app/main/default/pages/${name}/src/index.js`,
+        value: templateIndex },
+      { key: `force-app/main/default/pages/${name}/src/components/App.js`,
+        value: templateApp },
+      { key: `force-app/main/default/pages/${name}.page`,
+        value: templateIndexHtml },
+      { key: `force-app/main/default/staticresources/${name}.resource-meta.xml`,
+        value: templateResourceMetadata },
+      { key: `force-app/main/default/pages/${name}.page-meta.xml`,
+        value: templatePageMetadata }
+    ]
 
     return Promise.all([
       createDirectoryPromise(
         `force-app/main/default/pages/${name}/src/components`
       ),
       createDirectoryPromise(`force-app/main/default/staticresources/${name}`)
-    ]).then(() =>
-      Promise.all([
-        writeToFile(`package.json`, templatePackageJsonConfig),
-        writeToFile(`webpack.config.js`, templateWebpackConfig),
-        writeToFile(`.babelrc`, templateBabelConfig),
-        writeToFile(
-          `force-app/main/default/pages/${name}/src/index.js`,
-          templateIndex
-        ),
-        writeToFile(
-          `force-app/main/default/pages/${name}/src/components/App.js`,
-          templateApp
-        ),
-        writeToFile(
-          `force-app/main/default/pages/${name}.page`,
-          templateIndexHtml
-        ),
-        writeToFile(
-          `force-app/main/default/staticresources/${name}.resource-meta.xml`,
-          templateResourceMetadata
-        ),
-        writeToFile(
-          `force-app/main/default/pages/${name}.page-meta.xml`,
-          templatePageMetadata
-        )
-      ])
+    ]).then(() => 
+      writeToFiles(files)
         .then(results => {
           // Output file creation
           this.log(JSON.stringify(results))
@@ -108,7 +117,7 @@ export default class Create extends Command {
           const { stdout, stderr } = await exec(`yarn build`)
           this.log(stdout)
           this.log(stderr)
-        })
+        }) 
     )
   }
 }
