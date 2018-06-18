@@ -28,9 +28,10 @@ interface File {
 }
 
 // Writes files
-const writeFilePromise = Util.promisify(FS.writeFile)
+// const writeFilePromise = Util.promisify(FS.writeFile)
 const writeToFile = (filePath: string, contents: string): Promise<any> => (
-  writeFilePromise(filePath, contents).then(() => `${filePath} created`)
+  // writeFilePromise(filePath, contents).then(() => `${filePath} created`)
+  core.SfdxUtil.writeFile(filePath, contents).then(() => `${filePath} created`)
 )
 const writeToFiles = (files: File[]): Promise<any> => (
   Promise.all(
