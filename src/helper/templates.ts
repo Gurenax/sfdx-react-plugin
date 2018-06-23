@@ -17,14 +17,14 @@ const getTemplatePackageJsonConfig = (name: string): string =>
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.1"
-  },
-  "dependencies": {
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }`
 
@@ -82,6 +82,14 @@ const getTemplateIndexHtml = (name: string): string =>
   <script src="/resource/${name}/App.bundle.js" type="text/javascript"></script>
 </apex:page>`
 
+const getTemplateTestHtml = (name: string): string =>
+`<html>
+  <body>
+    <div id="root"></div>
+    <script src="../staticresources/${name}/App.bundle.js" type="text/javascript"></script>
+  </body>
+</html>`
+
 const getTemplateResourceMetadata = (name: string): string =>
 `<?xml version="1.0" encoding="UTF-8"?>
 <StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
@@ -106,6 +114,7 @@ export {
   getTemplateIndex,
   getTemplateApp,
   getTemplateIndexHtml,
+  getTemplateTestHtml,
   getTemplateResourceMetadata,
   getTemplatePageMetadata
 }
