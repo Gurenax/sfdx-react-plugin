@@ -87,7 +87,7 @@ class App extends Component {
 export default App`
 
 const getTemplateIndexHtml = (name: string): string =>
-`<apex:page id="${name}" lightningStylesheets="false">
+`<apex:page id="${name}" lightningStylesheets="true">
   <div id="root"></div>
   <script src="/resource/${name}/App.bundle.js" type="text/javascript"></script>
 </apex:page>`
