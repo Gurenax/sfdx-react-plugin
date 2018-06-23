@@ -25,7 +25,7 @@ export default class Update extends Command {
   public async run(): Promise<any> {
     // tslint:disable-line:no-any
     // Install packages
-    this.log('Installing packages...')
+    this.log('Updating packages...')
     return exec(`yarn install`).then(async () => {
       // Run webpack
       this.log('Building app...')
