@@ -7,6 +7,7 @@ import {
   getTemplateIndex,
   getTemplateApp,
   getTemplateIndexHtml,
+  getTemplateTestHtml,
   getTemplateResourceMetadata,
   getTemplatePageMetadata
 } from '../../helper/templates'
@@ -75,8 +76,10 @@ export default class Create extends Command {
     const templateIndex = getTemplateIndex()
     const templateApp = getTemplateApp()
     const templateIndexHtml = getTemplateIndexHtml(name)
+    const templateTestHtml = getTemplateTestHtml(name)
     const templateResourceMetadata = getTemplateResourceMetadata(name)
     const templatePageMetadata = getTemplatePageMetadata(name)
+
     // Create key-value pair of filename and file path
     const files:File[] = [
       { key: `package.json`, value: templatePackageJsonConfig },
@@ -88,6 +91,8 @@ export default class Create extends Command {
         value: templateApp },
       { key: `force-app/main/default/pages/${name}.page`,
         value: templateIndexHtml },
+      { key: `force-app/main/default/pages/${name}.test.html`,
+        value: templateTestHtml },
       { key: `force-app/main/default/staticresources/${name}.resource-meta.xml`,
         value: templateResourceMetadata },
       { key: `force-app/main/default/pages/${name}.page-meta.xml`,
