@@ -3,7 +3,7 @@
   <a href="https://github.com/Gurenax/sfdx-react-plugin">
     <img src="assets/images/heading.png" alt="" height="100" width="auto"/>
   </a><br/><br/>
-  <em>Simple and easy Create-React-App for Salesforce</em>
+  <em>Simple and easy to use Create-React-App plugin for Salesforce DX</em>
 </p>
 
 ---
