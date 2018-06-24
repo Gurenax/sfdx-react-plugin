@@ -2,9 +2,11 @@
 <p align="center">The Create-React-App for Salesforce</p>
 
 ## Requirements
-- Npm needs to be installed
-- Yarn needs to be installed
+- NPM needs to be installed - [Get NPM](https://www.npmjs.com/get-npm)
+- Yarn needs to be installed - [Get Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
+
 ---
+
 ## Install the plugin
 - Clone this project
 ```
@@ -19,7 +21,9 @@ yarn install
 ```
 sfdx plugins:link .
 ```
+
 ---
+
 ## Running the plugin
 - To create a new React App, run:
 ```
