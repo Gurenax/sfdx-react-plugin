@@ -32,7 +32,7 @@ interface File {
 // const writeFilePromise = Util.promisify(FS.writeFile)
 const writeToFile = (filePath: string, contents: string): Promise<any> => (
   // writeFilePromise(filePath, contents).then(() => `${filePath} created`)
-  core.SfdxUtil.writeFile(filePath, contents).then(() => `${filePath} created`)
+  core.SfdxUtil.writeFile(filePath, contents).then(() => `${filePath}`)
 )
 const writeToFiles = (files: File[]): Promise<any> => (
   Promise.all(
@@ -108,21 +108,29 @@ export default class Create extends Command {
       writeToFiles(files)
         .then(results => {
           // Output file creation
-          this.log(JSON.stringify(results))
+          this.log('Files created:', JSON.stringify(results))
         })
         .then(async () => {
           // Install packages
           this.log('Installing packages...')
-          const { stdout, stderr } = await exec(`yarn install`)
-          this.log(stdout)
-          this.log(stderr)
+          try {
+            const { stdout, stderr } = await exec(`yarn install`)
+            this.log(stdout)
+            this.log(stderr)
+          } catch(error) {
+            this.log(error.stdout)
+          }
         })
         .then(async () => {
           // Run webpack
           this.log('Building app...')
-          const { stdout, stderr } = await exec(`yarn build`)
-          this.log(stdout)
-          this.log(stderr)
+          try {
+            const { stdout, stderr } = await exec(`yarn build`)
+            this.log(stdout)
+            this.log(stderr)
+          } catch(error) {
+            this.log(error.stdout)
+          }
         }) 
     )
   }
