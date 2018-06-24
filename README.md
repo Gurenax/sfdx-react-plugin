@@ -1,7 +1,7 @@
 <h1 align="center">SFDX React Plugin</h1>
 <p align="center">The Create-React-App for Salesforce</p>
 <span style="display:block;text-align:center">
-  <img src="assets/images/heading.png" alt="" height="100" with="auto"/>
+  <img src="assets/images/heading.png" alt="" height="100" width="auto"/>
 </span>
 
 ---
