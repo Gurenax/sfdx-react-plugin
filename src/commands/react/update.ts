@@ -29,9 +29,15 @@ export default class Update extends Command {
     return exec(`yarn install`).then(async () => {
       // Run webpack
       this.log('Building app...')
-      const { stdout, stderr } = await exec(`yarn build`)
-      this.log(stdout)
-      this.log(stderr)
+      try {
+        const { stdout, stderr } = await exec(`yarn build`)
+        this.log(stdout)
+        this.log(stderr)
+      } catch(error) {
+        this.log(error.stdout)
+      }
+    }).catch(error => {
+      this.log(error.stdout)
     })
   }
 }
