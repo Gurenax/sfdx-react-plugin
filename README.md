@@ -1,4 +1,4 @@
-<h1 align="center">SFDX React Plugin</h1>
+<h1 align="center">React Plugin for Salesforce DX</h1>
 <p align="center">
   <a href="https://github.com/Gurenax/sfdx-react-plugin">
     <img src="assets/images/heading.png" alt="" height="100" width="auto"/>
