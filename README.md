@@ -1,19 +1,39 @@
 <h1 align="center">SFDX React Plugin</h1>
 <p align="center">The Create-React-App for Salesforce</p>
 
-## The following needs to be installed
-- Npm
-- Yarn
-
+## Requirements
+- Npm needs to be installed
+- Yarn needs to be installed
+---
 ## Install the plugin
+- Clone this project
 ```
 git clone https://github.com/Gurenax/sfdx-react-plugin
 ```
+- Install the packages
 ```
-yarn
+cd sfdx-react-plugin
+yarn install
 ```
+- Link the plugin to SFDX
 ```
 sfdx plugins:link .
+```
+---
+## Running the plugin
+- To create a new React App, run:
+```
+sfdx react:create -n HelloWorld
+```
+
+- After making changes to the React App, run:
+```
+sfdx react:update
+```
+
+- Push changes to your Org
+```
+sfdx force:source:push -u <Org Name>
 ```
 
 ---
