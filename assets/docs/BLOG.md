@@ -22,3 +22,10 @@
   - Easy integration with 3rd party Libaries (e.g. Webpack)
 
 - Code can be easily tested with test frameworks
+
+---
+
+## React Plugin
+- The objective is to build a simple React code generator similar to Facebook's `create-react-app`.
+- The simplicity comes from not having to include the libraries we will never use in a VisualForce context such as the Node server in which React usually runs.
+- The react app will be uploaded as a static resource and embedded in a VisualForce page.
