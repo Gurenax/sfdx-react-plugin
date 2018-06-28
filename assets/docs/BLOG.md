@@ -27,5 +27,6 @@
 
 ## React Plugin
 - The objective is to build a simple React code generator similar to Facebook's `create-react-app`.
-- The simplicity comes from not having to include the libraries we will never use in a VisualForce context such as the Node server in which React usually runs.
+- We will only include the essential starter libraries which means that we will not include the libraries that we will never use in a VisualForce context such as the Node server in which React usually runs.
 - The react app will be uploaded as a static resource and embedded in a VisualForce page.
+- The plugin will be responsible for the creation of metadata and relevant paths for assets such as images, icons and stylesheets.
