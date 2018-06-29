@@ -2,7 +2,7 @@
 
 ## Salesforce DX
 - Salesforce DX is a Command Line Interface tool based on the Node.js Open CLI Framework (OCLIF) built by Heroku.
-- To extend the features of the CLI tool, we are given the capability to create custom plugins which are Salesforce DX plugins.
+- To extend the features of the CLI tool, we are given the capability to create custom plugins (Salesforce DX plugins).
 
 ### Salesforce DX Plugins
 - There are several use cases in which we can use Salesforce DX plugins:
@@ -30,3 +30,12 @@
 - We will only include the essential starter libraries which means that we will not include the libraries that we will never use in a VisualForce context such as the Node server in which React usually runs.
 - The react app will be uploaded as a static resource and embedded in a VisualForce page.
 - The plugin will be responsible for the creation of metadata and relevant paths for assets such as images, icons and stylesheets.
+
+### What we need
+- NPM and Yarn
+- Webpack
+  - CSS Loader plugin
+  - Style Loader plugin
+- Babel
+- Babel presets
+- Bootstrap
