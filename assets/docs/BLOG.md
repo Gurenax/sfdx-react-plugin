@@ -21,7 +21,13 @@
 - Packages are managed with Yarn
   - Easy integration with 3rd party Libaries (e.g. Webpack)
 
-- Code can be easily tested with test frameworks
+- Code can be easily tested with a variety of test frameworks
+
+
+### Why use SFDX plugin instead of just a Shell Script?
+- Org information is available in SFDX
+- Shell script is less flexible than TypeScript
+- We can use open source libraries with plugins
 
 ---
 
