@@ -53,6 +53,7 @@ sfdx force:source:push -u <Org Name>
 # SFDX Generated Docs
 
 <!-- toc -->
+* [SFDX Generated Docs](#sfdx-generated-docs)
 * [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
 <!-- install -->
@@ -70,21 +71,26 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx-react-plugin react:create [FILE]`](#sfdx-react-plugin-reactcreate-file)
+* [`sfdx-react-plugin react:create`](#sfdx-react-plugin-reactcreate)
 * [`sfdx-react-plugin react:update`](#sfdx-react-plugin-reactupdate)
 
-## `sfdx-react-plugin react:create [FILE]`
+## `sfdx-react-plugin react:create`
 
 ```
 USAGE
-  $ sfdx-react-plugin react:create [FILE]
+  $ sfdx-react-plugin react:create
 
 OPTIONS
-  -h, --help       show CLI help
-  -n, --name=name  (required) name of the app
+  -h, --help=help                                 display the help texts
+  -n, --name=name                                 name of the app
+  -u, --targetusername=targetusername             username or alias for the target org; overrides default target org
+  --apiversion=apiversion                         override the api version used for api requests made by this command
+  --json                                          format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
 
-EXAMPLE
-  $ sfdx react:create -n HelloWorld
+EXAMPLES
+  $ sfdx react:create -n HelloWorld -u OrgName
+  $ sfdx react:create -n HelloWorld -u OrgName --apiversion 43.0
 ```
 
 _See code: [src/commands/react/create.ts](https://github.com/Gurenax/sfdx-react-plugin/blob/v1.0.0/src/commands/react/create.ts)_
