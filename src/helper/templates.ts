@@ -21,6 +21,7 @@ const getTemplatePackageJsonConfig = (name: string): string =>
     "babel-preset-stage-1": "^6.24.1",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "image-webpack-loader": "^4.3.1",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.12.0",
@@ -40,7 +41,7 @@ const getTemplateWebpackConfig = (name: string): string =>
 const webpack = require('webpack')
 module.exports = {
   mode: 'development',
-  entry: './react/${name}/src/index.js',
+  entry: './${name}/src/index.js',
   output: {
     path: path.resolve(__dirname, 'force-app/main/default/staticresources/${name}'),
     filename: 'App.bundle.js'
@@ -48,30 +49,28 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /.js$/,
         exclude: /node_modules/,
         use: ['babel-loader'] // Loads .babelrc
       },
       {
-        test:/\.css$/,
+        test:/.css$/,
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|jp(e*)g|svg)$/,  
+        test: /.(png|svg|ico|jpg|jpeg|gif|pdf)$/,
         use: [{
-            loader: 'url-loader',
-            options: { 
-              limit: 10000, // Convert images < 10kb to base64 strings
-              name: 'images/img_[hash]_[name].[ext]'
-            } 
+          loader: 'url-loader',
+        }, {
+          loader: 'image-webpack-loader',
         }]
-    }
+      }
     ]
   },
   stats: {
     colors: true
-  },
-  devtool: 'inline-source-map' // Uncomment in production
+  }
+  //devtool: 'inline-source-map' // Comment when in production
 }`
 
 const getTemplateIndex = (): string =>
@@ -161,7 +160,7 @@ const getTemplateTestHtml = (name: string): string =>
 `<html>
   <body>
     <div id="root"></div>
-    <script src="../force-app/main/default/staticresources/${name}/App.bundle.js" type="text/javascript"></script>
+    <script src="force-app/main/default/staticresources/${name}/App.bundle.js" type="text/javascript"></script>
   </body>
 </html>`
 
