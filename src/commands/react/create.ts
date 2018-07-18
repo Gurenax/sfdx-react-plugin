@@ -121,17 +121,17 @@ export default class Create extends SfdxCommand {
       { key: `package.json`, value: templatePackageJsonConfig },
       { key: `webpack.config.js`, value: templateWebpackConfig },
       { key: `.babelrc`, value: templateBabelConfig },
-      { key: `react/${name}/src/index.js`,
+      { key: `${name}/src/index.js`,
         value: templateIndex },
-      { key: `react/${name}/src/components/App.js`,
+      { key: `${name}/src/components/App.js`,
         value: templateApp },
-      { key: `react/${name}/src/components/App.css`,
+      { key: `${name}/src/components/App.css`,
         value: templateCSS },
-      { key: `react/${name}/src/components/logo.svg`,
+      { key: `${name}/src/components/logo.svg`,
         value: templateLogo },
       { key: `force-app/main/default/pages/${name}.page`,
         value: templateIndexHtml },
-      { key: `react/${name}.test.html`,
+      { key: `${name}.test.html`,
         value: templateTestHtml },
       { key: `force-app/main/default/staticresources/${name}.resource-meta.xml`,
         value: templateResourceMetadata },
@@ -140,7 +140,7 @@ export default class Create extends SfdxCommand {
     ]
 
     return Promise.all([
-      createDirectoryPromise(`react/${name}/src/components`),
+      createDirectoryPromise(`${name}/src/components`),
       createDirectoryPromise(`force-app/main/default/pages/`),
       createDirectoryPromise(`force-app/main/default/staticresources/${name}`)
     ]).then(() => 
