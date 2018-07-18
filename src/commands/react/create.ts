@@ -131,7 +131,7 @@ export default class Create extends SfdxCommand {
         value: templateLogo },
       { key: `force-app/main/default/pages/${name}.page`,
         value: templateIndexHtml },
-      { key: `force-app/main/default/pages/${name}.test.html`,
+      { key: `react/${name}.test.html`,
         value: templateTestHtml },
       { key: `force-app/main/default/staticresources/${name}.resource-meta.xml`,
         value: templateResourceMetadata },

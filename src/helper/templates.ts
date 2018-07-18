@@ -161,7 +161,7 @@ const getTemplateTestHtml = (name: string): string =>
 `<html>
   <body>
     <div id="root"></div>
-    <script src="../staticresources/${name}/App.bundle.js" type="text/javascript"></script>
+    <script src="../force-app/main/default/staticresources/${name}/App.bundle.js" type="text/javascript"></script>
   </body>
 </html>`
 
