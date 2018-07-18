@@ -36,12 +36,15 @@
 - We will only include the essential starter libraries which means that we will not include the libraries that we will never use in a VisualForce context such as the Node server in which React usually runs.
 - The react app will be uploaded as a static resource and embedded in a VisualForce page.
 - The plugin will be responsible for the creation of metadata and relevant paths for assets such as images, icons and stylesheets.
+- It will also compress assets (i.e. images) such that the 5mb limit for static resources will not be reached.
 
 ### What we need
 - NPM and Yarn
 - Webpack
   - CSS Loader plugin
   - Style Loader plugin
+  - URL Loader
+  - Webpack Image Loader
 - Babel
 - Babel presets
 - Bootstrap
