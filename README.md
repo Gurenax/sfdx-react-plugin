@@ -35,7 +35,7 @@ sfdx plugins:link .
 ### Running the plugin
 - To create a new React App, run:
 ```
-sfdx react:create -n HelloWorld
+sfdx react:create -n HelloWorld -u OrgName
 ```
 
 - After making changes to the React App, run:
