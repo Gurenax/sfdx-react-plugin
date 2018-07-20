@@ -49,7 +49,7 @@ export default class Create extends SfdxCommand {
     `$ sfdx react:create -n HelloWorld -u OrgName --apiversion 43.0`,
   ]
 
-  // For Usage help text
+  // Arguments
   // public static args = [{ name: 'file' }]
 
   // Option: if using Heroku CLI Command instead of SfdxCommand
@@ -62,6 +62,7 @@ export default class Create extends SfdxCommand {
   //   })
   // }
 
+  // Flags
   protected static flagsConfig = {
     // flag for help (-h, --help)
     help : { char: 'h', description: 'display the help texts' },
